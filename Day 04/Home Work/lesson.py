@@ -1,0 +1,5 @@
+name=input("whats your name:")
+lastname=input("whats your lastname:")
+location=input("where do you live:")
+age=int(input("whats your age:"))
+print("you will be" + " " + str(age+20) + "in 20 years")

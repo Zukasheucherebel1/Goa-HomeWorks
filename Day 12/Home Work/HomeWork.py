@@ -61,5 +61,3 @@ else:
     print("Number is not prime")
 
 
-
-

@@ -1,0 +1,1 @@
+"c:\Users\PCZONE.GE\OneDrive\Desktop\Copy-of-PC-Main-Components-An-Overview.pptx"

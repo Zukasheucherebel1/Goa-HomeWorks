@@ -17,10 +17,11 @@ print(sum_of_smallest_and_largest)
 
 
 
+def is_palindrome(s):
+    return s == s[::-1]
+
 my_string = "madam"
-
-print("Is palindrome:", 'Is_palidrome')
-
+print("Is palindrome:", is_palindrome(my_string))
 
 numbers = [10, 23, 5, 67, 12, 78, 34, 89, 2, 45]
 even_count = 0
@@ -49,3 +50,4 @@ for value in original_list:
 
 
 print(new_list)
+

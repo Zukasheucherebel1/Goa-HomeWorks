@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW M5 F90 - Overview</title>
+    <style>
+        /* Basic Style Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #333;
+            background-image: url('https://bmwcarclubgb.uk/wp-content/uploads/2020/12/698.jpg'); /* Background BMW logo image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #0077c8;
+            margin-bottom: 10px;
+        }
+
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            transition: opacity 1s ease;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .nav-buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0077c8;
+            color: white;
+        }
+
+        .car-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+
+        .car-info p {
+            margin: 5px 0;
+        }
+
+        .stories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .story {
+            flex: 1 1 45%;
+            background-color: #0077c8;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>BMW M5 F90</h1>
+            <p>An exhilarating blend of power and luxury</p>
+        </div>
+
+        <!-- Slideshow Section -->
+        <div class="slideshow">
+            <img src="https://c4.wallpaperflare.com/wallpaper/673/910/452/bmw-white-m5-f90-running-lights-hd-wallpaper-preview.jpg" alt="BMW M5 Front View" class="slide active">
+            <img src="https://f90.bimmerpost.com/forums/attachment.php?attachmentid=2821787" alt="BMW M5 Side View" class="slide">
+            <img src="https://www.exoticshunter.com/imagetag/234/23/l/Used-2019-BMW-M5-Competition-ONE-OWNER-PERFECTLY-OPTIONED-EXECUTIVE-PACK-1663359664.jpg" alt="BMW M5 Rear View" class="slide">
+            <img src="https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/topics/magazine-article-pool/2017/bmw-m5-f90/bmw-m5-f90-gal-11.jpg" alt="BMW M5 Interior" class="slide">
+        </div>
+
+        <!-- Navigation Buttons for Slideshow -->
+        <div class="nav-buttons">
+            <button onclick="showSlide(-1)">Previous</button>
+            <button onclick="showSlide(1)">Next</button>
+        </div>
+
+        <!-- Car Specifications Section -->
+        <div class="car-info">
+            <p><strong>Horsepower:</strong> 617 hp</p>
+            <p><strong>Torque:</strong> 800 lb-ft</p>
+            <p><strong>Mass:</strong> 1855 kg</p>
+            <p><strong>Wheels:</strong> 20-inch forged alloy</p>
+        </div>
+
+        <!-- Story Sections -->
+        <div class="stories">
+            <div class="story">
+                <h2>About the Engine</h2>
+                <p>The BMW M5 F90 boasts a twin-turbocharged 4.4-liter V8 engine, delivering 617 hp and accelerating from 0 to 60 mph in just 3.1 seconds. It perfectly combines raw power with refined control.</p>
+            </div>
+            <div class="story">
+                <h2>Chassis and Handling</h2>
+                <p>The M5 F90 features an intelligent all-wheel-drive system with rear-biased handling, allowing drivers to experience a sporty feel even with high levels of stability and control on any surface.</p>
+            </div>
+            <div class="story">
+                <h2>Interior Luxury</h2>
+                <p>The F90 M5 is crafted with premium materials, featuring Merino leather upholstery, high-resolution displays, and advanced technology, making it as luxurious as it is powerful.</p>
+            </div>
+            <div class="story">
+                <h2>Wheels and Design</h2>
+                <p>With 20-inch forged alloy wheels, the M5 F90 sports a distinctive look, merging aggressive styling with aerodynamic efficiency, built to stand out while enhancing performance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>Designed and developed by Zukitooo</p>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(direction) {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add("active");
+        }
+    </script>
+</body>
+</html>

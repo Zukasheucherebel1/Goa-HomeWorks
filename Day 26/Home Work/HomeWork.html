@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Clone Registration</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f0f2f5; }
+    .container { width: 100%; max-width: 400px; margin: 50px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+    h1 { text-align: center; color: #1877f2; }
+    label { display: block; margin: 15px 0 5px; font-weight: bold; }
+    input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+    button { width: 100%; padding: 10px; background-color: #1877f2; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    button:hover { background-color: #145dbf; }
+    .error { color: red; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+    <form id="registrationForm">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+      <span class="error" id="fullnameError"></span>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <span class="error" id="emailError"></span>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <span class="error" id="passwordError"></span>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', (event) => {
+      let isValid = true;
+
+      const fullname = document.getElementById('fullname');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+
+      const fullnameError = document.getElementById('fullnameError');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+
+      // Clear errors
+      fullnameError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
+
+      if (!fullname.value.trim()) {
+        fullnameError.textContent = 'Full name is required.';
+        isValid = false;
+      }
+
+      if (!email.value.trim()) {
+        emailError.textContent = 'Email is required.';
+        isValid = false;
+      }
+
+      if (!password.value.trim()) {
+        passwordError.textContent = 'Password is required.';
+        isValid = false;
+      }
+
+      if (!isValid) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

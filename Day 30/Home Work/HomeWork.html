@@ -1,0 +1,34 @@
+# სიის შექმნა
+my_list = [1, 2, 3, 4, 5]
+
+# მე-3 ელემენტის წაშლა (ინდექსი 2)
+del my_list[2]
+
+# ახალი ელემენტის დამატება მე-0 ინდექსზე
+my_list.insert(0, "new_element")
+
+# შედეგი
+print(my_list)
+
+def manual_len(data):
+    count = 0
+    for _ in data:
+        count += 1
+    return count
+
+# ტესტი
+print(manual_len("Hello"))  # 5
+print(manual_len([1, 2, 3, 4]))  # 4
+
+
+def manual_pop(lst, index):
+    # ვქმნით ახალ სიას, სადაც არ იქნება ამოღებული ელემენტი
+    new_list = []
+    for i in range(len(lst)):
+        if i != index:
+            new_list.append(lst[i])
+    return new_list
+
+# ტესტი
+print(manual_pop([1, 2, 3, 4, 5], 2))  # [1, 2, 4, 5]
+

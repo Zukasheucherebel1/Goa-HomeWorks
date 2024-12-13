@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Formats</title>
+</head>
+<body>
+    <h1>Media Formats with Proper Usage</h1>
+    <h2>Video</h2>
+    <!-- ვიდეოს ერთიანი თეგი, მრავალი ფორმატით -->
+    <video controls autoplay loop muted>
+        <!-- მთავარი ფორმატი, მაგალითად MP4 -->
+        <source src="video.mp4" type="video/mp4">
+        <!-- ალტერნატიული ფორმატები -->
+        <source src="video.webm" type="video/webm">
+        <source src="video.ogv" type="video/ogg">
+        <!-- fallback -->
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Audio</h2>
+    <!-- აუდიოს ერთიანი თეგი, მრავალი ფორმატით -->
+    <audio controls autoplay loop muted>
+        <!-- მთავარი ფორმატი, მაგალითად MP3 -->
+        <source src="audio.mp3" type="audio/mpeg">
+        <!-- ალტერნატიული ფორმატები -->
+        <source src="audio.ogg" type="audio/ogg">
+        <source src="audio.wav" type="audio/wav">
+        <!-- fallback -->
+        Your browser does not support the audio tag.
+    </audio>
+</body>
+</html>
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Formats (Incorrect Way)</title>
+</head>
+<body>
+    <h1>Media Formats with Incorrect Usage</h1>
+    <h2>Video</h2>
+    <!-- თითოეულ ფორმატზე განსხვავებული ვიდეო თეგი -->
+    <video controls autoplay loop muted src="video.mp4"></video>
+    <video controls autoplay loop muted src="video.webm"></video>
+    <video controls autoplay loop muted src="video.ogv"></video>
+
+    <h2>Audio</h2>
+    <!-- თითოეულ ფორმატზე განსხვავებული აუდიო თეგი -->
+    <audio controls autoplay loop muted src="audio.mp3"></audio>
+    <audio controls autoplay loop muted src="audio.ogg"></audio>
+    <audio controls autoplay loop muted src="audio.wav"></audio>
+</body>
+</html>
+
+
+
+
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Formats Info</title>
+</head>
+<body>
+    <h1>Video and Audio Formats</h1>
+    <h2>Video Formats</h2>
+    <ul>
+        <li><strong>MP4:</strong> Widely supported, high quality, and efficient compression.</li>
+        <li><strong>WebM:</strong> Optimized for web use, open format.</li>
+        <li><strong>Ogg:</strong> Open format with good compression and quality.</li>
+    </ul>
+
+    <h2>Audio Formats</h2>
+    <ul>
+        <li><strong>MP3:</strong> Universal compatibility, small file sizes.</li>
+        <li><strong>OGG:</strong> Open-source, good quality.</li>
+        <li><strong>WAV:</strong> High-quality uncompressed audio, large file size.</li>
+    </ul>
+</body>
+</html>

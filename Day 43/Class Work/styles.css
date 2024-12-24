@@ -1,0 +1,29 @@
+
+
+/* ყველა ტექსტი პირველი სექციაში წითელი და მუქი ფონი */
+.first-section {
+    color: rgb(100, 100, 100);
+    background-color: #0044ff; /* მუქი ნაცრისფერი ფონი */
+}
+
+/* ყველა ტექსტი მეორე სექციაში მწვანე და მუქი ფონი */
+.second-section {
+    color: rgb(61, 61, 61);
+    background-color: #0011ff; /* კიდევ უფრო მუქი ნაცრისფერი ფონი */
+}
+
+/* ღილაკების სტილის დამატება, მუქი ფერის დიზაინისთვის */
+button {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #0400ff; /* მუქი ნაცრისფერი ღილაკის ფონი */
+    color: rgb(73, 73, 73); /* ტექსტის ფერი თეთრი */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #666; /* hover ეფექტი ღილაკისთვი */
+}

@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="first-section">
+            <p>ეს ტექსტი პირველი სექციისთვისაა.</p>
+            <button>პირველი ღილაკი</button>
+        </section>
+
+        <section class="second-section">
+            <p>ეს ტექსტი მეორე სექციისთვისაა.</p>
+            <button>მეორე ღილაკი</button>
+        </section>
+    </main>
+</body>
+</html>

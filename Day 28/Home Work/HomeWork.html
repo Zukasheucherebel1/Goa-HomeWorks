@@ -1,1 +1,24 @@
-code warsebi gvak
+https://www.codewars.com/kata/56747fd5cb988479af000028
+def get_middle(s):
+    
+    if len(s) % 2 == 0:
+        n = len(s) // 2
+        e = n - 1
+        res1 = s[e]
+        res2 = s[n]
+        res = [res1,res2]
+        return ''.join(res)
+    if len(s) % 2 != 0:
+        n = len(s) // 2
+        e = n 
+        res = s[e]
+    return res
+
+https://www.codewars.com/kata/554b4ac871d6813a03000035
+def high_and_low(numbers):
+    tall =[]
+    for char in numbers.split(" "):
+        tall.append(int(char))
+    return f"{max(tall)} {min(tall)}"
+
+https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პარაგრაფების სტილიზაცია</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p class="underline">ეს არის პირველი პარაგრაფი</p>
+    <p class="line-through">ეს არის მეორე პარაგრაფი</p>
+    <p class="overline">ეს არის მესამე პარაგრაფი</p>
+</body>
+</html>
+/* პირველ პარაგრაფს ქვეშ უნდა ჰქონდეს ხაზი */
+.underline {
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-style: dotted;
+}
+
+/* მეორე პარაგრაფის ტექსტი უნდა იყოს გადახაზული */
+.line-through {
+    text-decoration: line-through;
+    text-decoration-color: blue;
+    text-decoration-style: dashed;
+}
+
+/* მესამეს ტექსტის ზემოთ ხაზი */
+.overline {
+    text-decoration: overline;
+    text-decoration-color: green;
+    text-decoration-style: solid;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ტექსტის ცენტრში განლაგება</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>ეს არის სათაური</h1>
+    <b>ეს არის ტექსტი b-თეგში</b>
+</body>
+</html>
+/* h1 და b განლაგება ცენტრში */
+h1 {
+    text-align: center; /* ცენტრში განლაგება */
+    color: darkblue;
+}
+
+b {
+    text-align: center; /* ეს არ მოქმედებს, რადგან b არის inline ელემენტი */
+    color: darkgreen;
+    display: block; /* შეცდომის გამოსასწორებლად ვცვლით display-ს block-ზე */
+    margin: 0 auto; /* block ელემენტისთვის ცენტრში განლაგება */
+}

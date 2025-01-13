@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Lists</title>
+    <style>
+    
+        ol {
+            list-style-type: decimal-leading-zero; 
+            color: #333;
+            background-color: #f4f4f4; 
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        ol li {
+            color: #0066cc; 
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        
+        ul {
+            list-style: none; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            padding: 0;
+        }
+
+        ul li {
+            color: #444; 
+            font-size: 18px;
+            padding: 10px;
+            background-color: #ddd; 
+            margin: 5px 0;
+            border-radius: 4px;
+            transition: all 0.3s; 
+        }
+
+        ul li:hover {
+            background-color: #4caf50; 
+            color: white; 
+        }
+
+        
+        ul li:nth-child(3) {
+            background-color: #ffcc00; 
+        }
+    </style>
+</head>
+<body>
+  
+    <h2>Ordered List</h2>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+    </ol>
+
+    <h2>Unordered List</h2>
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+    </ul>
+
+   
+</body>
+</html>

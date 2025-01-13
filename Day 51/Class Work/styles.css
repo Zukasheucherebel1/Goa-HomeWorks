@@ -1,0 +1,20 @@
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.styled-table tr:nth-child(odd) {
+    background-color: green;
+    color: white;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: yellow;
+}

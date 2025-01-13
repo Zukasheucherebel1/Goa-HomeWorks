@@ -1,0 +1,23 @@
+
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+
+a:visited {
+    color: purple;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: green;
+    text-decoration: underline dashed;
+}
+
+
+a:active {
+    color: black;
+    text-decoration: underline double;
+}
+ 

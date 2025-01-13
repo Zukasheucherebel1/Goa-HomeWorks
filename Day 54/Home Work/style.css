@@ -1,0 +1,50 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.blue {
+    background-color: #007bff;
+}
+
+.yellow {
+    background-color: #ffc107;
+    color: black;
+}
+
+.red {
+    background-color: #dc3545;
+}
+
+.gray {
+    background-color: #6c757d;
+}

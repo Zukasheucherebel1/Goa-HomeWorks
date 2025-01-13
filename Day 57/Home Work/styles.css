@@ -1,0 +1,98 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9f4fa;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .card h1 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+  
+  .guarantee {
+    color: #29a87c;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 1rem;
+    margin: 0 20px 20px;
+  }
+  
+  .pricing-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #34bfa3;
+    color: white;
+    padding: 20px;
+  }
+  
+  .pricing {
+    background: #29a87c;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .pricing h2 {
+    margin: 0 0 10px;
+  }
+  
+  .pricing .price {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .pricing .price span {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .sign-up {
+    background: #92e6b5;
+    color: #006940;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .sign-up:hover {
+    background: #82d7a4;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .features li {
+    margin: 5px 0;
+  }
+  

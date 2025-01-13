@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+main {
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    border: 5px solid black;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 2px solid red;
+}

@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px;
+    text-align: center;
+}
+
+.guarantee {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.card-body {
+    display: flex;
+    background: #26a69a;
+    color: white;
+}
+
+.pricing, .why-us {
+    flex: 1;
+    padding: 20px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}

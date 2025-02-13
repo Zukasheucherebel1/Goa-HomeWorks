@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.price {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 5px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.read-more {
+    display: block;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}

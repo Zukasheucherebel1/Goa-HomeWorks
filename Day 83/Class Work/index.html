@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var, let and const demo</title>
+</head>
+<body>
+    <h1>JavaScript var, let and const example</h1>
+    <script>
+        // 1) var - ფუნქციის სკოპი, შეიძლება ხელახლა გამოყვანა, ემატება window ობიექტი
+        var myVar = "Hello, world!";
+        console.log("var myVar: ", myVar); // "Hello, world!"
+        console.log("window.myVar: ", window.myVar); // "Hello, world!"
+
+        // ვცვლით window ობიექტის საშუალებით
+        window.myVar = "Changed value!";
+        console.log("Modified myVar: ", myVar); // "Changed value!"
+
+        // 2) let - ბლოკის სკოპი, არ შეიძლება ხელახლა გამოყვანა
+        let myLet = "I am let";
+        console.log("let myLet: ", myLet);
+        
+        // ბლოკის შიგნით გამოყვანა
+        {
+            let myLet = "Block scoped let";
+            console.log("Inside block myLet: ", myLet); // "Block scoped let"
+        }
+        console.log("Outside block myLet: ", myLet); // "I am let"
+
+        // 3) const - ბლოკის სკოპი, ვერ გადავწერთ ახალ მნიშვნელობას
+        const myConst = "I am const";
+        console.log("const myConst: ", myConst);
+        
+        // შეცდომას გამოიწვევს: myConst = "New value";
+    </script>
+</body>
+</html>

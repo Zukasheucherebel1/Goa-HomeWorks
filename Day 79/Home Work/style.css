@@ -1,0 +1,106 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .top-section {
+            padding: 20px;
+            background: #fff;
+        }
+        .top-section h2 {
+            color: #333;
+            font-size: 1.5rem;
+        }
+        .guarantee {
+            color: #28a745;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .bottom-section {
+            display: flex;
+            flex-direction: column;
+        }
+        .left, .right {
+            padding: 20px;
+        }
+        .left {
+            background: #17a2b8;
+            color: white;
+        }
+        .left .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .left .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        .left button {
+            background: #ffc107;
+            border: none;
+            padding: 12px;
+            color: #333;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .right {
+            background: #e9ecef;
+        }
+        .right ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+        .right ul li {
+            padding: 5px 0;
+            color: #333;
+        }
+        @media (min-width: 480px) {
+            .bottom-section {
+                flex-direction: row;
+            }
+            .left, .right {
+                flex: 1;
+            }
+        }
+        @media (max-width: 320px) {
+            .top-section h2 {
+                font-size: 1.2rem;
+            }
+            .description, .guarantee {
+                font-size: 0.8rem;
+            }
+            .left .price {
+                font-size: 1.4rem;
+            }
+            .left button {
+                font-size: 0.9rem;
+            }
+        }

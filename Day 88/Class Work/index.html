@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>function temperatureStatus(temp = 20) {
+        if (temp < -10) {
+            return "Very cold";
+        } else if (temp >= -10 && temp < 0) {
+            return "Cold";
+        } else if (temp >= 0 && temp < 20) {
+            return "Normal";
+        } else if (temp >= 20 && temp < 30) {
+            return "Warm";
+        } else {
+            return "Hot";
+        }
+    }
+    
+    console.log(temperatureStatus(-15)); // Very cold
+    console.log(temperatureStatus(-5));  // Cold
+    console.log(temperatureStatus(10));  // Normal
+    console.log(temperatureStatus(25));  // Warm
+    console.log(temperatureStatus(35));  // Hot
+    console.log(temperatureStatus());    // Warm (default 20)
+    </script>
+</body>
+</html>

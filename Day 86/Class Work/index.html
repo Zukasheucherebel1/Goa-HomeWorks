@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ამოცანები</title>
+</head>
+<body>
+
+    <script>
+        
+        let age = prompt("enter your age:");
+        let isAdult = age > 18 ? true : false;
+        console.log(isAdult);
+
+      
+        let user = prompt("enter your name:");
+        let password = prompt("enter your password:");
+        console.log(password.length < 4 ? "password is too short" : `baro grutaa, ${user}`);
+
+        let weather = prompt("ravair amindia?").toLowerCase();
+
+        let message = weather === "sunny" ? "waval fexs gavshli" :
+                      weather === "rainiy" ? "wavichkumpalaveb" :
+                      weather === "snowy" ? "tovls shevcham" :
+                      weather === "windy" ? "saxlshi davegdebi" :
+                      "davrchebi...";
+
+        console.log(message);
+    </script>
+
+</body>
+</html>

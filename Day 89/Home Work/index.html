@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <SCript>// გლობალური ცვლადი (ყველგან ჩანს)
+        let globalVar = "I am global";
+        
+        function myFunction() {
+            // ფუნქციის სკოუპი (მხოლოდ ფუნქციის შიგნით ჩანს)
+            let functionVar = "I exist inside a function";
+            console.log(globalVar); // ეს მუშაობს, რადგან გლობალურია
+            console.log(functionVar); // ეს მუშაობს, რადგან იმავე ფუნქციაშია
+        }
+        
+        myFunction();
+        console.log(globalVar); // მუშაობს
+        // console.log(functionVar); // შეცდომა! functionVar ფუნქციის გარეთ არ ჩანს
+        
+        if (true) {
+            let blockVar = "I exist inside a block";
+            console.log(blockVar); // მუშაობს
+        }
+        // console.log(blockVar); // შეცდომა! blockVar ბლოკის გარეთ არ ჩანს
+        </SCript>
+</body>
+</html>

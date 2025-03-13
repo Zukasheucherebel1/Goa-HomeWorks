@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+
+    <script>
+        // 2) Function to calculate the average of 5 numbers
+        function average(a, b, c, d, e) {
+            return (a + b + c + d + e) / 5;
+        }
+        console.log("Average:", average(10, 20, 30, 40, 50));
+
+        // 3) Same function using arrow function
+        const averageArrow = (a, b, c, d, e) => (a + b + c + d + e) / 5;
+        console.log("Arrow function average:", averageArrow(10, 20, 30, 40, 50));
+
+        // 4) Function to ask user for details and show a greeting
+        function userInfo() {
+            let firstName = prompt("Enter your first name:");
+            let lastName = prompt("Enter your last name:");
+            let age = prompt("Enter your age:");
+            console.log(`Hello, my name is ${firstName} ${lastName}, and I am ${age} years old.`);
+        }
+        userInfo();
+
+        // 5) Arrow function to calculate total price
+        const totalPrice = (price, quantity = 1) => price * quantity;
+        console.log("Total price:", totalPrice(20, 3));
+        console.log("Total price (default quantity 1):", totalPrice(15));
+
+        // 6) let/const variable inside function
+        function testScope() {
+            let message = "This is a let variable";
+            const fixedMessage = "This is a const variable";
+            console.log(message);
+            console.log(fixedMessage);
+        }
+        testScope();
+        // console.log(message); // Error: let and const are not accessible outside the function
+
+        // 7) var variable inside function
+        function testScopeVar() {
+            var oldMessage = "This is a var variable";
+            console.log(oldMessage);
+        }
+        testScopeVar();
+        console.log(oldMessage); // Works because var is function-scoped
+    </script>
+
+</body>
+</html>

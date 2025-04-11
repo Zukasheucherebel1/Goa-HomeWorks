@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>დავალება</title>
+    <style>
+        .new-class {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="old-id">ეს არის პირველი პარაგრაფი</p>
+    <p class="original-class">ეს არის მეორე პარაგრაფი</p>
+    <p>ეს არის მესამე პარაგრაფი <b></b></p>
+
+    <script>
+        // პირველი პარაგრაფის შეცვლა
+        const firstParagraph = document.querySelector('p');
+        firstParagraph.textContent = 'ახალი ტექსტი პირველ პარაგრაფში';
+        firstParagraph.id = 'new-id';
+
+        // მეორე პარაგრაფის შეცვლა
+        const secondParagraph = document.querySelector('.original-class');
+        secondParagraph.style.backgroundColor = 'lightyellow';
+        secondParagraph.className = 'new-class';
+
+        // მესამე პარაგრაფში b თეგის შევსება
+        const boldText = document.querySelector('b');
+        boldText.textContent = 'ეს არის bold ტექსტი';
+    </script>
+</body>
+</html>

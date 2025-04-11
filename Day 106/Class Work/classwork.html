@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter და Product Form</title>
+</head>
+<body>
+    <button id="counterBtn">დააკლიკე მე</button>
+
+    <script>
+        let count = 0;
+
+        function counter() {
+            count++;
+            console.log(`current amount: ${count}`);
+        }
+
+        const counterButton = document.querySelector('#counterBtn');
+        counterButton.addEventListener('click', counter);
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timerDisplay {
+            font-size: 72px;
+            margin: 30px 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #startBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #pauseBtn {
+            background-color: #f39c12;
+            color: white;
+        }
+        #resetBtn {
+            background-color: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>ტაიმერი</h1>
+    <div id="timerDisplay">0</div>
+    
+    <div>
+        <button id="startBtn" class="btn">Start</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="resetBtn" class="btn">Reset</button>
+    </div>
+    
+    <script>
+        let seconds = 0;
+        let timer;
+        let isRunning = false;
+        
+        const timerDisplay = document.getElementById('timerDisplay');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        
+        // ტაიმერის ფუნქცი
+ა
+        function updateTimer() {
+            seconds++;
+            timerDisplay.textContent = seconds;
+            
+            // 60 წამის შემდეგ ავტომატური გაჩერება
+            if (seconds >= 60) {
+                clearInterval(timer);
+                isRunning = false;
+                alert("60 წამი ამოიწურა!");
+            }
+        }
+        
+        // Start ღილაკი
+        startBtn.addEventListener('click', () => {
+            if (!isRunning) {
+                timer = setInterval(updateTimer, 1000);
+                isRunning = true;
+            }
+        });
+        
+        // Pause ღილაკი
+        pauseBtn.addEventListener('click', () => {
+            if (isRunning) {
+                clearInterval(timer);
+                isRunning = false;
+            }
+        });
+        
+        // Reset ღილაკი
+        resetBtn.addEventListener('click', () => {
+            clearInterval(timer);
+            seconds = 0;
+            timerDisplay.textContent = seconds;
+            isRunning = false;
+        });
+    </script>
+</body>
+</html>

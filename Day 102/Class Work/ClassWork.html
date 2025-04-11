@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM manipulation</title>
+</head>
+<body>
+    <!-- ელემენტები ერთი და იგივე კლასით -->
+    <div class="box">first box</div>
+    <p class="box">second box (paragraph)</p>
+    <span class="box">third box</span>
+    <h3 class="box">fourth box (h3)</h3>
+    <a href="#" class="box">fifth box (link)</a>
+
+    <script>
+        // წამოვიღოთ ყველა ელემენტი კლასით "box"
+        const boxes = document.getElementsByClassName('box');
+        
+        // გადავრუთოთ მიღებული კოლექცია და დავბეჭდოთ თითოეული ელემენტი
+        for (let i = 0; i < boxes.length; i++) {
+            console.log(boxes[i]);
+        }
+    </script>
+</body>
+</html>

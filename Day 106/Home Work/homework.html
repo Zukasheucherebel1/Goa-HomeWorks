@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management System</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button id="addProductBtn">დაამატე პროდუქტი</button>
+        <button id="deleteProductBtn">წაშალე პროდუქტი</button>
+    </div>
+    
+    <table id="productsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>პროდუქტის სახელი</th>
+                <th>რაოდენობა</th>
+                <th>ფასი</th>
+                <th>ჯამური ღირებულება</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- პროდუქტები დაემატება აქ -->
+        </tbody>
+    </table>
+    
+    <p id="totalPrice">Total Price: 0</p>
+
+    <script>
+        let totalPrice = 0;
+        let products = [];
+        const productsTable = document.querySelector('#productsTable tbody');
+        const totalPriceElement = document.querySelector('#totalPrice');
+
+        // უნიკალური ID-ის გენერატორი
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        }
+
+        // პროდუქტის დამატება
+        document.querySelector('#addProductBtn').addEventListener('click', function() {
+            const productName = prompt('შეიყვანეთ პროდუქტის სახელი:');
+            if (!productName) return;
+            
+            const quantity = Number(prompt('შეიყვანეთ რაოდენობა:'));
+            if (isNaN(quantity)) {
+                alert('გთხოვთ შეიყვანეთ სწორი რაოდენობა!');
+                return;
+            }
+            
+            const price = Number(prompt('შეიყვანეთ ფასი:'));
+            if (isNaN(price)) {
+                alert('გთხოვთ შეიყვანეთ სწორი ფასი!');
+                return;
+            }
+            
+            const id = generateId();
+            const total = quantity * price;
+            
+            // პროდუქტის შექმნა და მასივში დამატება
+            const product = {
+                id,
+                name: productName,
+                quantity,
+                price,
+                total
+            };
+            
+            products.push(product);
+            
+            // ცხრილის განახლება
+            updateTable();
+            
+            // მთლიანი ფასის განახლება
+            updateTotalPrice();
+        });
+
+        // პროდუქტის წაშლა
+        document.querySelector('#deleteProductBtn').addEventListener('click', function() {
+            const productId = prompt('შეიყვანეთ წასაშლელი პროდუქტის ID:');
+            if (!productId) return;
+            
+            const productIndex = products.findIndex(p => p.id === productId);
+            
+            if (productIndex === -1) {
+                alert('პროდუქტი მითითებული ID-ით არ მოიძებნა!');
+                return;
+            }
+            
+            // პროდუქტის წაშლა მასივიდან
+            products.splice(productIndex, 1);
+            
+            // ცხრილის განახლება
+            updateTable();
+            
+            // მთლიანი ფასის განახლება
+            updateTotalPrice();
+            
+            alert('პროდუქტი წარმატებით წაიშალა!');
+        });
+
+        // ცხრილის განახლების ფუნქცია
+        function updateTable() {
+            // ცხრილის გასუფთავება
+            productsTable.innerHTML = '';
+            
+            // ყველა პროდუქტის ცხრილში დამატება
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.setAttribute('data-id', product.id);
+                
+                const idCell = document.createElement('td');
+                idCell.textContent = product.id;
+                
+                const nameCell = document.createElement('td');
+                nameCell.textContent = product.name;
+                
+                const quantityCell = document.createElement('td');
+                quantityCell.textContent = product.quantity;
+                
+                const priceCell = document.createElement('td');
+                priceCell.textContent = product.price;
+                
+                const totalCell = document.createElement('td');
+                totalCell.textContent = product.total;
+                
+                row.appendChild(idCell);
+                row.appendChild(nameCell);
+                row.appendChild(quantityCell);
+                row.appendChild(priceCell);
+                row.appendChild(totalCell);
+                
+                productsTable.appendChild(row);
+            });
+        }
+
+        // მთლიანი ფასის განახლების ფუნქცია
+        function updateTotalPrice() {
+            totalPrice = products.reduce((sum, product) => sum + product.total, 0);
+            totalPriceElement.textContent = `Total Price: ${totalPrice}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+//w3schoolidan gvak davalebebi

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>friend</title>
+    <style>
+        
+        .friend {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        button {
+            background: blue;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .requested {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="friendsList"></div>
+
+    <script>
+        
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(friends => {
+                let html = '';
+                
+                
+                for(let i = 0; i < friends.length; i++) {
+                    html += `
+                        <div class="friend">
+                                <h3>${friends[i].name}</h3>
+                            <p>${friends[i].email}</p>
+                            <button onclick="toggleRequest(${friends[i].id}, this)">add friend</button>
+                        </div>
+                    `;
+                }
+                
+                // 3. გამოვსახოთ გვერდზე
+                document.getElementById('friendsList').innerHTML = html;
+            })
+            .catch(error => {
+                console.log('error:', error);
+            });
+
+        
+       //
+    </script>
+</body>
+</html>

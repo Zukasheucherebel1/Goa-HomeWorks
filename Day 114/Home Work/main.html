@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game (1-20)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .game-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .attempts {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Guess the Number (1-20)</h1>
+        <p>You have <span id="remaining-attempts">10</span> attempts remaining</p>
+        <input type="number" id="guess-input" min="1" max="20" placeholder="Enter your guess">
+        <button id="submit-btn">Submit Guess</button>
+        <button id="reset-btn">Reset Game</button>
+        <div class="attempts">Previous guesses: <span id="previous-guesses"></span></div>
+    </div>
+
+    <script>
+        // Game variables
+        let secretNumber = Math.floor(Math.random() * 20) + 1;
+        let attempts = 0;
+        const maxAttempts = 10;
+        let previousGuesses = [];
+
+        // DOM elements
+        const guessInput = document.getElementById('guess-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const remainingAttemptsEl = document.getElementById('remaining-attempts');
+        const previousGuessesEl = document.getElementById('previous-guesses');
+
+        // Submit button click handler
+        submitBtn.addEventListener('click', function() {
+            // Get user's guess
+            const userGuess = parseInt(guessInput.value);
+            
+            // Validate input
+            if (isNaN(userGuess)) {
+                alert("Please enter a valid number!");
+                return;
+            }
+
+            // Check if the number is within range
+            if (userGuess < 1 || userGuess > 20) {
+                alert("Please enter a number between 1 and 20!");
+                return;
+            }
+
+            // Add to previous guesses
+            previousGuesses.push(userGuess);
+            previousGuessesEl.textContent = previousGuesses.join(', ');
+
+            // Increment attempt count
+            attempts++;
+            remainingAttemptsEl.textContent = maxAttempts - attempts;
+
+            // Check the guess
+            if (userGuess === secretNumber) {
+                alert(`Congratulations! You guessed the number in ${attempts} attempts!`);
+                resetGame();
+            } else if (attempts >= maxAttempts) {
+                alert(`Game over! The secret number was ${secretNumber}. You've reached the maximum attempts.`);
+                resetGame();
+            } else if (userGuess > secretNumber) {
+                alert("Number is too high! Try again.");
+            } else {
+                alert("Number is too low! Try again.");
+            }
+
+            // Clear the input field
+            guessInput.value = '';
+        });
+
+        // Reset button click handler
+        resetBtn.addEventListener('click', resetGame);
+
+        // Function to reset the game
+        function resetGame() {
+            secretNumber = Math.floor(Math.random() * 20) + 1;
+            attempts = 0;
+            previousGuesses = [];
+            remainingAttemptsEl.textContent = maxAttempts;
+            previousGuessesEl.textContent = '';
+            guessInput.value = '';
+            console.log("New secret number:", secretNumber); // For debugging
+        }
+
+        // For debugging (to see the secret number in console)
+        console.log("Secret number:", secretNumber);
+    </script>
+</body>
+</html>

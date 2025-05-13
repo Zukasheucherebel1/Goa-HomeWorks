@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მოსწავლეთა რეგისტრაცია</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .form-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>მოსწავლეთა რეგისტრაციის სისტემა</h1>
+        
+        <div class="form-container">
+            <h2>რეგისტრაციის ფორმა</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">სახელი:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">პაროლი:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit">რეგისტრაცია</button>
+            </form>
+        </div>
+        
+        <div class="table-container">
+            <h2>დარეგისტრირებული მოსწავლეები</h2>
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>სახელი</th>
+                        <th>Email</th>
+                        <th>პაროლი</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- სტუდენტები დაემატება აქ JavaScript-ის მეშვეობით -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const tableBody = document.querySelector('#studentsTable tbody');
+            
+            // შენახული სტუდენტების მასივი
+            let students = JSON.parse(localStorage.getItem('students')) || [];
+            
+            // თუ უკვე არის სტუდენტები, ვაჩვენებთ ცხრილში
+            if (students.length > 0) {
+                renderStudentsTable();
+            }
+            
+            // ფორმის გაგზავნის დროს
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                
+                // ვამოწმებთ არის თუ არა უკვე ასეთი მოსწავლე
+                const isDuplicate = students.some(student => 
+                    student.name === name || student.email === email
+                );
+                
+                if (isDuplicate) {
+                    alert('მოსწავლე ამ მონაცემებით უკვე დარეგისტრირებულია!');
+                    return;
+                }
+                
+                // ვქმნით ახალ მოსწავლეს უნიკალური ID-ით
+                const newStudent = {
+                    id: generateUniqueId(),
+                    name: name,
+                    email: email,
+                    password: password
+                };
+                
+                // ვამატებთ მასივში
+                students.push(newStudent);
+                
+                // ვინახავთ localStorage-ში
+                localStorage.setItem('students', JSON.stringify(students));
+                
+                // ვანახლებთ ცხრილს
+                renderStudentsTable();
+                
+                // ვასუფთავებთ ფორმას
+                form.reset();
+                
+                alert('რეგისტრაცია წარმატებით დასრულდა!');
+            });
+            
+            // ფუნქცია ცხრილის განახლებისთვის
+            function renderStudentsTable() {
+                tableBody.innerHTML = '';
+                
+                students.forEach(student => {
+                    const row = document.createElement('tr');
+                    
+                    row.innerHTML = `
+                        <td>${student.id}</td>
+                        <td>${student.name}</td>
+                        <td>${student.email}</td>
+                        <td>${student.password}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+            }
+            
+            // ფუნქცია უნიკალური ID-ის გენერაციისთვის
+            function generateUniqueId() {
+                return 'id-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now().toString(36);
+            }
+        });
+    </script>
+</body>
+</html>
